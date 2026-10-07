@@ -1,0 +1,38 @@
+.tools-panel { background: var(--blue); color: var(--paper); padding: 15vh 5vw 8vh; }
+.tools-heading { display: flex; align-items: flex-end; gap: 5vw; }
+.tools-heading .headline { margin: 0; transform: translateX(calc(var(--local) * -70px)); }
+.tools-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 3vw;
+  margin-top: 9vh;
+}
+.tool-column { display: flex; flex-direction: column; font: 400 clamp(11px, 1.15vw, 18px)/1.65 "Inter"; }
+.tool-column h3 {
+  margin: 0 0 12px;
+  padding-bottom: 7px;
+  border-bottom: 2px solid currentColor;
+  font: 700 clamp(10px, 1vw, 15px) "Inter";
+  letter-spacing: .08em;
+}
+.sparkle { position: absolute; width: 80px; height: 80px; background: var(--coral); transform: rotate(45deg); }
+.sparkle::before, .sparkle::after { content: ""; position: absolute; inset: 14%; border-radius: 50%; background: var(--blue); }
+.sparkle::after { inset: 35%; background: var(--paper); }
+.sparkle-one { right: 7vw; bottom: -35px; }
+.sparkle-two { right: 13vw; bottom: -55px; background: var(--lilac); transform: rotate(45deg) scale(.7); }
+
+@media (max-width: 900px) {
+  .tools-panel { padding-left: 7vw; padding-right: 7vw; }
+  .tools-grid { grid-template-columns: repeat(3, 1fr); gap: 3vh 5vw; margin-top: 6vh; }
+}
+
+@media (max-width: 600px) {
+  .tools-panel { padding-top: 13vh; }
+  .tools-heading { display: block; }
+  .tools-heading .headline { font-size: 14vw; margin-top: 12px; }
+  .tools-grid { grid-template-columns: repeat(2, 1fr); gap: 2.5vh 7vw; margin-top: 5vh; }
+  .tool-column { font-size: 10px; line-height: 1.45; }
+  .tool-column h3 { font-size: 8px; margin-bottom: 5px; }
+}

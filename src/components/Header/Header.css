@@ -1,0 +1,87 @@
+.site-header {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 86px;
+  padding: 0 3.2vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--ink);
+  mix-blend-mode: difference;
+  filter: invert(1);
+  pointer-events: none;
+}
+
+.site-header button { pointer-events: auto; }
+.monogram {
+  border: 0;
+  background: none;
+  font-weight: 900;
+  letter-spacing: -0.08em;
+  font-size: 25px;
+  cursor: pointer;
+}
+.monogram span { font: 400 8px "Inter"; margin-left: 4px; vertical-align: top; }
+.header-nav {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: clamp(18px, 2.4vw, 42px);
+}
+.header-nav button {
+  position: relative;
+  border: 0;
+  padding: 7px 0;
+  background: transparent;
+  font: 700 10px "Inter";
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.header-nav button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform .35s cubic-bezier(.16,.7,0,1);
+}
+.header-nav button:hover::after { transform: scaleX(1); transform-origin: left; }
+.menu-button {
+  width: 54px;
+  height: 54px;
+  margin-left: 28px;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  position: relative;
+}
+.menu-button i {
+  position: absolute;
+  width: 31px;
+  height: 2px;
+  left: 12px;
+  top: 21px;
+  background: currentColor;
+  transition: transform .5s cubic-bezier(.16,.7,0,1), top .5s;
+}
+.menu-button i:last-child { top: 31px; }
+.menu-button.is-open i { top: 27px; transform: rotate(45deg); }
+.menu-button.is-open i:last-child { transform: rotate(-45deg); }
+
+@media (max-width: 900px) {
+  .site-header { height: 68px; }
+  .header-nav { gap: 16px; }
+  .header-nav button { font-size: 8px; }
+}
+
+@media (max-width: 600px) {
+  .header-nav { display: none; }
+}

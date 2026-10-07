@@ -1,0 +1,46 @@
+.menu-overlay {
+  position: fixed;
+  z-index: 40;
+  inset: 0;
+  padding: 110px 6vw 5vw;
+  background: var(--coral);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path .85s cubic-bezier(.16,.7,0,1);
+  pointer-events: none;
+}
+.menu-overlay.is-open { clip-path: inset(0); pointer-events: auto; }
+.menu-overlay > p, .menu-overlay > a {
+  font: 700 11px "Inter";
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.menu-overlay > div { display: flex; flex-direction: column; align-items: flex-start; }
+.menu-overlay div button {
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  background: none;
+  font-size: clamp(38px, 6.6vw, 96px);
+  font-weight: 850;
+  line-height: .98;
+  letter-spacing: -.07em;
+  cursor: pointer;
+  transition: transform .35s;
+}
+.menu-overlay div button:hover { transform: translateX(2vw); }
+.menu-overlay div button span {
+  display: inline-block;
+  width: 44px;
+  font: 400 10px "Inter";
+  letter-spacing: 0;
+  text-align: left;
+}
+
+@media (max-width: 600px) {
+  .menu-overlay { padding: 90px 7vw 8vw; }
+  .menu-overlay div button { font-size: 48px; }
+}

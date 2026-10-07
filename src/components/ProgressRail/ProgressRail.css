@@ -1,0 +1,2 @@
+.progress-rail { position: fixed; z-index: 30; left: 0; bottom: 0; width: 100%; height: 4px; background: rgba(128,128,128,.24); }
+.progress-rail i { display: block; width: calc(var(--journey) * 100%); height: 100%; background: var(--coral); }

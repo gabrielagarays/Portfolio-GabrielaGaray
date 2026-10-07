@@ -1,0 +1,23 @@
+.horizontal-viewport {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+}
+.horizontal-viewport.is-dragging { cursor: grabbing; }
+.horizontal-track {
+  height: 100%;
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+.panel {
+  --local: 0;
+  position: relative;
+  flex: 0 0 100vw;
+  width: 100vw;
+  height: 100svh;
+  overflow: hidden;
+}

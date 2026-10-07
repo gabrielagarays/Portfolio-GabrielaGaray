@@ -1,0 +1,7 @@
+.section-dots { position: fixed; z-index: 30; right: 24px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 10px; }
+.section-dots button { width: 6px; height: 6px; padding: 0; border: 0; border-radius: 50%; background: #929299; cursor: pointer; transition: height .3s, background .3s; }
+.section-dots button.active { height: 28px; border-radius: 10px; background: var(--coral); }
+
+@media (max-width: 600px) {
+  .section-dots { right: 10px; }
+}

@@ -1,0 +1,56 @@
+.contact-panel { background: var(--paper); display: grid; grid-template-columns: 1.15fr .85fr; gap: 8vw; padding: 13vh 7vw 10vh; }
+.contact-title .headline { font-size: clamp(50px, 6.4vw, 98px); transform: translateX(calc(var(--local) * -80px)); }
+.contact-title > a { color: var(--blue); font: 700 clamp(12px, 1.15vw, 18px) "Inter"; text-decoration: none; }
+.contact-form { display: flex; flex-direction: column; justify-content: center; gap: 24px; }
+.contact-form label { font: 700 9px "Inter"; letter-spacing: .17em; text-transform: uppercase; }
+.contact-form input, .contact-form textarea {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid #aaa;
+  border-radius: 0;
+  outline: 0;
+  padding: 11px 0 13px;
+  background: transparent;
+  color: var(--ink);
+  font: 500 clamp(16px, 1.5vw, 22px) "Inter";
+  resize: none;
+  user-select: text;
+}
+.contact-form input:focus, .contact-form textarea:focus { border-color: var(--blue); }
+.contact-form button {
+  margin-top: 12px;
+  display: flex;
+  justify-content: space-between;
+  padding: 19px 22px;
+  border: 0;
+  border-radius: 100px;
+  background: var(--blue);
+  color: white;
+  cursor: pointer;
+  font: 700 11px "Inter";
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  transition: background .3s, transform .3s;
+}
+.contact-form button:hover { background: var(--ink); transform: translateY(-3px); }
+.social-links { position: absolute; right: 7vw; bottom: 5vh; display: flex; gap: 25px; }
+.social-links a { color: var(--ink); text-decoration: none; font: 700 10px "Inter"; text-transform: uppercase; }
+.contact-panel footer { position: absolute; left: 7vw; bottom: 5vh; color: var(--blue); font: 400 10px "Inter"; }
+
+@media (max-width: 900px) {
+  .contact-panel { grid-template-columns: .9fr 1.1fr; gap: 5vw; padding-left: 6vw; padding-right: 6vw; }
+}
+
+@media (max-width: 600px) {
+  .contact-panel { display: block; padding: 12vh 8vw 9vh; }
+  .contact-title .headline { margin: 18px 0; font-size: 14vw; }
+  .contact-title > a { font-size: 10px; }
+  .contact-form { margin-top: 4vh; gap: 14px; }
+  .contact-form input, .contact-form textarea { padding: 7px 0 9px; font-size: 14px; }
+  .contact-form textarea { height: 48px; }
+  .contact-form button { padding: 14px 18px; }
+  .social-links { left: 8vw; right: auto; bottom: 5vh; gap: 14px; }
+  .social-links a { font-size: 8px; }
+  .contact-panel footer { display: none; }
+}

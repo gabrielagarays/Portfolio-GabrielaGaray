@@ -1,0 +1,47 @@
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 18px;
+  height: 18px;
+
+  border: 1.5px solid #ffffff;
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  pointer-events: none;
+
+  z-index: 2147483647;
+
+  box-sizing: border-box;
+
+  transform: translate3d(50vw, 50vh, 0) translate(-50%, -50%);
+
+  transition:
+    width 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    height 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 220ms ease,
+    border-color 220ms ease;
+
+  will-change: transform;
+
+  /* Temporalmente eliminado para asegurar visibilidad */
+  mix-blend-mode: normal;
+}
+
+.custom-cursor.is-interactive {
+  width: 42px;
+  height: 42px;
+
+  background: rgba(255, 255, 255, 0.12);
+
+  border-color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .custom-cursor {
+    display: none;
+  }
+}

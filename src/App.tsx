@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import type { FormEvent, PointerEvent as ReactPointerEvent } from "react";
 import { sections } from "./data/sections";
 import Header from "./components/Header/Header";
+import CustomCursor from "./components/CustomCursor/CustomCursor";
 import MenuOverlay from "./components/MenuOverlay/MenuOverlay";
 import HorizontalViewport from "./components/HorizontalViewport/HorizontalViewport";
 import Hero from "./components/Hero/Hero";
@@ -11,6 +12,7 @@ import Projects from "./components/Projects/Projects";
 import Contact from "./components/Contact/Contact";
 import ProgressRail from "./components/ProgressRail/ProgressRail";
 import SectionDots from "./components/SectionDots/SectionDots";
+
 
 export default function App() {
   const viewportRef = useRef<HTMLDivElement>(null);
@@ -129,6 +131,7 @@ export default function App() {
 
   return (
     <main className="app-shell">
+       <CustomCursor />
       <Header
         menuOpen={menuOpen}
         onNavigate={scrollToSection}
